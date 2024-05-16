@@ -1,38 +1,62 @@
-.App {
+.head{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.grid{
+  margin-top: 3%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.edit{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tshirt{
+  width: 80%;
+  height: 550px;
+  border: none;
+  border-width: 1px;
+  border-color: black;
 }
+.tshirt-image{
+  
+  margin-left: 15%;
+  color: blue;
+  border: solid;
+  border-width: 1px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 70%;
+  height: 99%;
+  background-image: url('https://wwfmarket.com/cdn/shop/files/R-THT-001-293_c731499e-489e-4b34-84f0-22bf3e383c9d.jpg?v=1703081143&width=1400');
+  background-size: 100% 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.textcontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 48%;
+  height: 44%;
+  overflow: hidden;
+  margin-top: 4%;
+}
+
+.textTshirt{
   color: white;
+  border: none;
+
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.textTshirt:hover{
+  cursor:move
 }
