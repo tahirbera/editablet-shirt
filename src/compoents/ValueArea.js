@@ -1,21 +1,43 @@
-export default function ValueArea ({text, setText, fontType, setFontType, fontSize, setFontSize, textColor, setTextColor}) {
-    return(
-      <div>
+export default function ValueArea ({textPosition, imagePosition, text, url, topOf, opacity, saved, setSaved, setText, fontType, setFontType, fontSize, setFontSize, textColor, setTextColor, setUrl, setTopOf, setOpacity}) {
+    
+  function saveDesign(){
+    setSaved([
+      {
+        savedText: text,
+        savedColor: textColor,
+        savedFont: fontType,
+        savedSize: fontSize,
+        savedUrl: url,
+        savedTopOf: topOf,
+        savedOpacity: opacity,
+        savedTextPosition: textPosition,
+        savedImagePosition: imagePosition,
+      },
+      ...saved,
+
+    ]
+    );
+    console.log(saved.savedText)
+
+  }
+
+  return(
+      <div className="valueArea">
         <div>
           
-                <div>
-                    <label>Enter Text </label>
+                <div className="values">
+                    <label>Enter Text :</label>
                     <input type="text"  onChange={(e) => setText(e.target.value)} />
                 </div>
-                <div>
-                    <label>Select font type </label>
+                <div className="values">
+                    <label>Select font type :</label>
                     <select value={fontType} onChange={(e) => setFontType(e.target.value)}>
                       <option value='Times New Roman'>Times New Roman</option>
                       <option value='Courier New'>Courier New</option>
                     </select>
                 </div>
-                <div>
-                    <label>Select font size </label>
+                <div className="values">
+                    <label>Select font size :</label>
                     <select value={fontSize} onChange={(e) => setFontSize(e.target.value)}>
                       <option value='12'>12</option>
                       <option value='14'>14</option>
@@ -28,8 +50,8 @@ export default function ValueArea ({text, setText, fontType, setFontType, fontSi
 
                     </select>
                 </div>
-                <div>
-                    <label>Select text color </label>
+                <div className="values">
+                    <label>Select text color :</label>
                     <select value={textColor} onChange={(e) => setTextColor(e.target.value)}>
                       <option value='white'>white</option>
                       <option value='yellow'>yellow</option>
@@ -39,6 +61,33 @@ export default function ValueArea ({text, setText, fontType, setFontType, fontSi
                       <option value='orange'>orange</option>
                     </select>
                 </div>
+                <div className="values">
+                  <label>
+                    Add IMG with URL :
+                  </label>
+                  <input type="text" onChange={(e) => setUrl(e.target.value)} />
+                  <br></br>
+                  <br></br>
+
+                  <label>
+                    Text is top of image
+                  </label>
+                  <input type="checkbox" onChange={(e) => setTopOf(e.target.checked)} />
+                  <br></br>
+                  <br></br>
+
+                  <label>
+                    Image opacity
+                  </label>
+                  <input type="range" min="0" max="1" step="0.01" onChange={(e) => setOpacity(e.target.value)} />
+                </div>
+                <div>
+{/*                   
+                  <button onClick={saveDesign}>
+                    Save Design
+                  </button> */}
+                </div>
+
             
         </div>
       </div>

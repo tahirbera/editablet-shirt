@@ -1,5 +1,16 @@
+body{
+  background-color: black;
+}
+
+input{
+  color: darkblue;
+}
+select{
+  color: darkblue;
+}
 .head{
   text-align: center;
+  color: rgb(255, 255, 255);
   font-size: 30px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -23,6 +34,7 @@
   border: none;
   border-width: 1px;
   border-color: black;
+  position: relative;
 }
 .tshirt-image{
   
@@ -49,14 +61,41 @@
   height: 44%;
   overflow: hidden;
   margin-top: 4%;
+  position: relative;
+
 }
 
 .textTshirt{
   color: white;
   border: none;
-
+  
+  
 }
 
 .textTshirt:hover{
   cursor:move
+}
+
+
+.tshirt2{
+  width: 40%;
+  height: 300px;
+  border: none;
+  border-width: 1px;
+  border-color: black;
+}
+
+.valueArea{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  margin-left: 350px;
+  text-align: left;
+  width: 40%;
+  background-color: black;
+  color: white;
+  letter-spacing: -1px;
+}
+
+.values{
+  padding: 10px;
 }
