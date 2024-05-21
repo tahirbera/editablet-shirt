@@ -30,7 +30,7 @@ function App() {
         <ValueArea
         imagePosition = {imagePosition}
         textPosition = {textPosition}
-
+        url={url}
         saved={saved}
         text={text}
         fontType={fontType}
@@ -74,12 +74,18 @@ function App() {
 }
 
 function SavedDesigns({saved}){
+  console.log(saved)
   return(
     <>
-    <div>
+    <div className='grid'>
+
       {saved.map((save, i)=>
+        <div className='tshirtarea'>
+        <h2 style={{'color': 'white',
+        'textAlign': 'center',
         
-        <div className="tshirt2" key={i}>
+        }}>Design {i + 1}</h2>  
+        <div className="tshirt" key={i}>
         
         <div className="tshirt-image" style={{
             'fontSize': '15px',
@@ -89,9 +95,8 @@ function SavedDesigns({saved}){
               <div className="textcontainer">
             
                 <p className="textTshirt" style={{
- 'position': 'absolute',
- 'left': `${save.savedTextPosition.x}px`,
- 'top': `${save.savedTextPosition.y}px`,
+                'position': 'absolute',
+                'transform': `translate(${save.savedTextPosition.x}px, ${save.savedTextPosition.y}px)`,
                 'fontSize': `${save.savedSize}px`,
                 'fontFamily': `${save.savedFont}`,
                 'zIndex': save.savedTopOf ? '2' : '1' ,
@@ -107,7 +112,10 @@ function SavedDesigns({saved}){
                 <div 
                 className='imageText'
                 style={{
-                  
+                  'position': 'absolute',
+
+                  'transform': `translate(${save.savedImagePosition.x}px, ${save.savedImagePosition.y}px)`,
+
                   'width': '100px',
                   'height': '100px',
                   'backgroundSize': '100% 100%',
@@ -122,6 +130,7 @@ function SavedDesigns({saved}){
             
         </div>
        
+      </div>
       </div>
       )}
     </div>

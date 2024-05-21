@@ -82,10 +82,10 @@ export default function ValueArea ({textPosition, imagePosition, text, url, topO
                   <input type="range" min="0" max="1" step="0.01" onChange={(e) => setOpacity(e.target.value)} />
                 </div>
                 <div>
-{/*                   
+                  
                   <button onClick={saveDesign}>
                     Save Design
-                  </button> */}
+                  </button>
                 </div>
 
             
